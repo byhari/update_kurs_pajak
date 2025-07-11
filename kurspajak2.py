@@ -13,7 +13,7 @@ def scrape_data():
     data = []
     failed_weeks = []  # To track failed weeks
     today = datetime.today()
-    start_date = today - timedelta(weeks=105)  # 2 years ago
+    start_date = today - timedelta(weeks=13)  # 3 months ago
     current_date = start_date
     total_weeks = (today - start_date).days // 7 + 1
     week_count = 0
@@ -120,7 +120,7 @@ st.title("Update Kurs Pajak")
 st.markdown("<h3 style='font-size:18px; margin-top:-10px;'>for Tax Payment - byhari</h3>", unsafe_allow_html=True)
 
 if st.button("Scrape Data"):
-    st.write("Fetching data from the last 2 years...")
+    st.write("Fetching data from the last 3 months ...")
     scraped_data = scrape_data()
 
     if scraped_data:
